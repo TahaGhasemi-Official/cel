@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="VOLTEX – offline electrical engineering calculators (TG.VL / TG.VX / TG.WX). Works without internet.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="VOLTEX">
+  <title>VOLTEX</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/Vazirmatn-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">⚡</div>
+      <div class="brand-text">
+        <strong>VOLTEX</strong>
+        <small data-i18n="tagline">Offline electrical engineering suite</small>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span id="engine-pill" class="pill pill-muted" data-i18n="engine_loading">Loading engine…</span>
+      <button id="btn-lang" class="icon-btn" type="button" title="Language" aria-label="Language">فa</button>
+      <button id="btn-theme" class="icon-btn" type="button" title="Theme" aria-label="Theme">🌙</button>
+      <button id="btn-install" class="btn btn-install hidden" type="button">
+        <span aria-hidden="true">⬇</span> <span data-i18n="download_app">Download app</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- LOGIN -->
+  <main id="login-screen" class="login-wrap hidden">
+    <form id="login-form" class="glass login-card" autocomplete="on" novalidate>
+      <div class="login-logo" aria-hidden="true">⚡</div>
+      <h1 data-i18n="login_title">Sign in</h1>
+      <p class="muted" data-i18n="login_sub">Access is by existing accounts only.</p>
+
+      <label class="field">
+        <span data-i18n="username">Username</span>
+        <input id="login-user" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      </label>
+      <label class="field">
+        <span data-i18n="password">Password</span>
+        <div class="pw-wrap">
+          <input id="login-pass" name="password" type="password" autocomplete="current-password" required>
+          <button id="btn-pw" class="pw-toggle" type="button" data-i18n="show">Show</button>
+        </div>
+      </label>
+
+      <p id="login-error" class="form-error" role="alert" aria-live="assertive"></p>
+      <button id="login-submit" class="btn btn-primary btn-block" type="submit" data-i18n="sign_in">Sign in</button>
+      <p class="muted tiny" data-i18n="no_signup">Accounts are managed by the administrator in login.json.</p>
+    </form>
+  </main>
+
+  <!-- APP -->
+  <div id="app" class="app hidden">
+    <nav class="sidebar" aria-label="Main">
+      <a href="#/dashboard" data-route="dashboard"><span class="ico">◈</span><span data-i18n="nav_dashboard">Dashboard</span></a>
+      <a href="#/navigator" data-route="navigator"><span class="ico">⚡</span><span data-i18n="nav_navigator">Navigator</span></a>
+      <a href="#/library" data-route="library"><span class="ico">▦</span><span data-i18n="nav_library">Model library</span></a>
+      <a href="#/formulas" data-route="formulas"><span class="ico">ƒ</span><span data-i18n="nav_formulas">Formulas</span></a>
+      <a href="#/history" data-route="history"><span class="ico">↺</span><span data-i18n="nav_history">History</span></a>
+      <a href="#/settings" data-route="settings"><span class="ico">⚙</span><span data-i18n="nav_settings">Settings</span></a>
+      <div class="sidebar-foot">
+        <span id="user-chip" class="user-chip"></span>
+        <button id="btn-logout" class="link-btn" type="button" data-i18n="logout">Sign out</button>
+      </div>
+    </nav>
+    <section id="view" class="view" tabindex="-1"></section>
+  </div>
+
+  <footer class="footer">
+    <span data-i18n="footer_powered">Powered by TahaGhasemi</span>
+  </footer>
+
+  <!-- Install instructions modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card glass">
+      <h2 id="modal-title" data-i18n="install_title">Install VOLTEX</h2>
+      <div id="modal-body"></div>
+      <button id="modal-close" class="btn btn-primary btn-block" type="button" data-i18n="close">Close</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast-wrap" role="status" aria-live="polite"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
