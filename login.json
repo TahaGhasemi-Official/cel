@@ -1,0 +1,46 @@
+{
+  "_readme": "Accounts for VOLTEX. Add users to the 'users' list. 'password' may be a SHA-256 hex hash (recommended; generate with tools/make_password.py) or plain text. There is no sign-up: only accounts listed here can log in.",
+  "_readme": "admin = voltex123 | user1 = usa1asu | user2 = qasw2wsaq | user3 = qazxsw3wsxzaq | soltani = soltani1234 | radin = radin2112 | abol1 = aboli1 | abol2 = aboli2",
+  "users": [
+    {
+      "username": "admin",
+      "password": "419e2f7bf96b0b087a1bc4b08221f3b39abf5d971f3e9297adc85a1ec55c2010", 
+      "name": "Administrator"
+    },
+    {
+      "username": "user1",
+      "password": "263c77c17de103b28bcbce5ee935559629ec605e1f435ea84b85e8143a67d297",
+      "name": "User1"
+    },
+    {
+      "username": "user2",
+      "password": "b9faccffc2ba8acfef9852c87eccca62863fb7dd708a401d8ea437e2d7510b75",
+      "name": "user2"
+    },
+    {
+      "username": "user3",
+      "password": "a1b04c0022818c74e69e93699cf115ed0c3fc56d8db8f8c4794b0849a5f1fe78",
+      "name": "user3"
+    },
+    {
+      "username": "soltani",
+      "password": "083bfea935cc1c5c55b5b82e45daf4909b3475ebc3f32a6efe8d296527e6f8a9",
+      "name": "Engineer Soltani"
+    },
+    {
+      "username": "radin",
+      "password": "d8339c52b9d5a6f779536a631cada44de463fdd2c5ee918597f8a2a52989eabd",
+      "name": "Smart boy in class"
+    },
+    {
+      "username": "abol1",
+      "password": "5e912331cda7c73ac38ffd735a6d43be6cde21768a94ffb98f9dc0d8185ded08",
+      "name": "abol hasani"
+    },
+    {
+      "username": "abol2",
+      "password": "b5f1b91a47dab2f5e4cd01428d97a417ac9b97bd84f9d429431314de4fa35101",
+      "name": "abol masoudi"
+    }
+  ]
+}
